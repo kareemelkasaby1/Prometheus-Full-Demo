@@ -1,0 +1,7 @@
+groups:
+- name: nodejsApp
+  rules:
+    - record: job:up
+      expr: up{job="nodeApp-metrics"}
+    - alert: nodejsAppDown
+      expr: job:up == 0
