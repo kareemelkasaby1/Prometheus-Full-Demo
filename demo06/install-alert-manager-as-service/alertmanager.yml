@@ -1,0 +1,14 @@
+global:
+route:
+  group_by: ['alertname']
+  group_wait: 10s
+  receiver: 'slack'
+  group_interval: 15s
+  # repeat_interval: 45s
+
+receivers:
+- name: 'slack'
+  slack_configs:
+  - channel: "#nodejs"
+    send_resolved: true
+    api_url: '<SLACK API GATEWAY>'
