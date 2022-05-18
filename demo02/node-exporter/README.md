@@ -20,9 +20,9 @@ wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_e
 ```
 > 3. extraxt files:
 ```
-tar -xvf node_exporter-1.3.1.linux-amd64.tar.gz.tar.gz
+tar -xvf node_exporter-1.3.1.linux-amd64.tar.gz
 
-cd node_exporter-1.3.1.linux-amd64.tar.gz
+cd node_exporter-1.3.1.linux-amd64
 
 ls
 ```
@@ -42,11 +42,11 @@ sudo vi /etc/systemd/system/node_exporter.service
 ```
 sudo systemctl daemon-reload
 
-sudo systemctl start Node_Exporter
+sudo systemctl start node_exporter
 
-sudo systemctl status Node_Exporter
+sudo systemctl status node_exporter
 
-sudo systemctl enable Node_Exporter
+sudo systemctl enable node_exporter
 ```
 The `Node_Exporter` listens on HTTP port `9100` by default.
 
