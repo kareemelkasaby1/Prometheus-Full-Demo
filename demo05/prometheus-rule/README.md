@@ -15,5 +15,5 @@ sudo vi /etc/prometheus/rules.yml
 ```
 > 3. Restart Prometheus service:
 ```
-sudo systemctl restart alertmanager
+sudo systemctl restart prometheus
 ```
