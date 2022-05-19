@@ -9,3 +9,4 @@
 - Using [Prom-Client](https://github.com/siimon/prom-client) for nodejs code.
 - Configureing `Rules` in `Prometheus`.
 - Instaling and configureng [Alert-Manager](https://github.com/prometheus/alertmanager).
+- Installing [Grafana github](https://github.com/grafana/grafana)
