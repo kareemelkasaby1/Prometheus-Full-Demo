@@ -3,7 +3,7 @@
 We need to install docker and nodejs on the machine just for demo purpose.
 I am using an Ubuntu machine.
 
-## 1.1 Deploy the logging stack
+## 1.1 Instaall Docker
 
 Docker instalation:
 
