@@ -67,3 +67,5 @@ sudo systemctl enable alertmanager
 The `Alert-Manager` listens on HTTP port `9093` by default.
 
 go to `/etc/prometheus/prometheus.yml` to enable talking to `Alert-Manager`.
+
+Next: [Demo 7 - Install Grafana as a Service](../../demo07/install-grafana-as-service/README.md)

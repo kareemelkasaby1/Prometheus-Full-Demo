@@ -68,3 +68,5 @@ sudo systemctl status prometheus
 sudo systemctl enable prometheus
 ```
 The `Prometheus` listens on HTTP port `9090` by default.
+
+Next: [Demo 2 - Install Node Exporter as a Service](../../demo02/node-exporter/README.md)

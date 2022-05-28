@@ -24,3 +24,5 @@ node index.js
 The `nodeJs code` listens on HTTP port `8000`.
 
 go to `/etc/prometheus/prometheus.yml` to add another item in the scrabers section.
+
+Next: [Demo 5 - Configure Prometheus Rules](../../demo05/prometheus-rule/README.md)
