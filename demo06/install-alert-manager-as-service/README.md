@@ -36,7 +36,7 @@ sudo chown alertmanager:alertmanager /usr/local/bin/amtool
 ```
 > 5. Make configuration directory for `Alert-Manager`:
 ```
-mkdir /etc/alertmanager
+sudo mkdir /etc/alertmanager
 ```
 
 > 6. Create [Alert Manager Configuration file](alertmanager.yml):

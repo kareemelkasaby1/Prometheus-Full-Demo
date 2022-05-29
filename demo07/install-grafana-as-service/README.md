@@ -1,4 +1,4 @@
-# Demo 6 - Install Grafana as a Service
+# Demo 7 - Install Grafana as a Service
 
 we need to do some steps to to install `Grafana`.
 

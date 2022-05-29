@@ -1,6 +1,6 @@
 # Demo 4 - Use Client Library
 
-we need inport client library in the code itself and expose the metrics to /metrics endpoint or any end point you need.
+we need to import client library in the code itself and expose the metrics to /metrics endpoint or any end point you need.
 
 [Client Libraries](https://prometheus.io/docs/instrumenting/clientlibs/)
 
