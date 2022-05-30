@@ -36,3 +36,4 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo apt install nodejs
 sudo apt install npm
 ```
+Next: [Demo 1 - Install Prometheus as a Service](../../demo01/install-prometheus-as-a-service/README.md)

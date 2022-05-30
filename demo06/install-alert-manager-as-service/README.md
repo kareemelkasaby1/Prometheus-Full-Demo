@@ -36,7 +36,7 @@ sudo chown alertmanager:alertmanager /usr/local/bin/amtool
 ```
 > 5. Make configuration directory for `Alert-Manager`:
 ```
-mkdir /etc/alertmanager
+sudo mkdir /etc/alertmanager
 ```
 
 > 6. Create [Alert Manager Configuration file](alertmanager.yml):
@@ -67,3 +67,5 @@ sudo systemctl enable alertmanager
 The `Alert-Manager` listens on HTTP port `9093` by default.
 
 go to `/etc/prometheus/prometheus.yml` to enable talking to `Alert-Manager`.
+
+Next: [Demo 7 - Install Grafana as a Service](../../demo07/install-grafana-as-service/README.md)

@@ -26,3 +26,5 @@ sudo docker run \
 The `C-Advisor` listens on HTTP port `8080` by default.
 
 go to `/etc/prometheus/prometheus.yml` to add another item in the scrabers section.
+
+Next: [Demo 4 - Use Client Library](../../demo04/client-library/README.md)

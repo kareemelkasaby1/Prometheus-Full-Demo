@@ -17,3 +17,4 @@ sudo vi /etc/prometheus/rules.yml
 ```
 sudo systemctl restart prometheus
 ```
+Next: [Demo 6 - Install Alert Manager as a Service](../../demo06/install-alert-manager-as-service/README.md)

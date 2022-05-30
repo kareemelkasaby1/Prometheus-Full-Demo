@@ -1,6 +1,6 @@
 # Demo 4 - Use Client Library
 
-we need inport client library in the code itself and expose the metrics to /metrics endpoint or any end point you need.
+we need to import client library in the code itself and expose the metrics to /metrics endpoint or any end point you need.
 
 [Client Libraries](https://prometheus.io/docs/instrumenting/clientlibs/)
 
@@ -24,3 +24,5 @@ node index.js
 The `nodeJs code` listens on HTTP port `8000`.
 
 go to `/etc/prometheus/prometheus.yml` to add another item in the scrabers section.
+
+Next: [Demo 5 - Configure Prometheus Rules](../../demo05/prometheus-rule/README.md)
