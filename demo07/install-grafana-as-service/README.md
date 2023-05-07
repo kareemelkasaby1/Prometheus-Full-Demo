@@ -32,3 +32,5 @@ sudo apt-get -y install grafana
 sudo systemctl enable --now grafana-server
 ```
 The `Grafana` listens on HTTP port `3000` by default.
+
+Next: [Demo 8 - Install Grafana as a Service](../../demo08/montring-k8s-cluster/README.md)

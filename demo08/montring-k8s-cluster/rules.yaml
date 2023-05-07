@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+  # take care of the below label this what make prometheus automaticaly consider this rules configuration
+    release: prometheus
+  name: example-rules
+spec:
+  groups:
+    - name: node-example
+      rules:
+        - record: node_filesystem_free_percent
+          expr: 100 * node_filesystem_free_bytes / node_filesystem_size_bytes
+        - alert: HostOutOfMemory
+          expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100 < 10
+          labels:
+            team: infra
+            severity: warning

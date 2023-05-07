@@ -1,7 +1,40 @@
-groups:
-- name: nodejsApp
-  rules:
-    - record: job:up
-      expr: up{job="nodeApp-metrics"}
-    - alert: nodejsAppDown
-      expr: job:up == 0
+  groups:
+  - name: low-space-check-rule
+    rules:
+      - alert: LowDiskSpace
+        expr: 100 * node_filesystem_free_bytes{job="nodes"} / node_filesystem_size_bytes{job="nodes"} < 10
+        labels:
+          severity: warning
+          environment: prod
+  - name: low-space-check-alert
+    interval: 15s
+    rules:
+      - record: node_network_receive_bytes_rate
+        expr: rate(node_network_receive_bytes_total{job="nodes"}[2m])
+      - record: node_network_receive_bytes_rate_avg
+        expr: avg by(instance) (node_network_receive_bytes_rate)
+      - record: node_filesystem_free_percent
+        expr: 100 * node_filesystem_free_bytes{job="nodes"} / node_filesystem_size_bytes{job="nodes"}
+      - alert: HostOutOfMemory
+  # for testing cases will make it < 95 instead of < 10
+        expr: node_filesystem_free_percent < 95
+        labels:
+          severity: warning
+          environment: prod
+        annotations:
+          description: "node {{.Labels.instance}} is seeing high memory usage on the mount point of {{.Labels.mountpoint}}, currently available memory: {{.Value}}%"
+  - name: nodejsApp
+    rules:
+      - record: job:up
+        expr: up{job="nodeJsApp-metrics"}
+      - alert: nodejsAppDown
+        expr: job:up == 0
+        for: 10s # will fire allert if it is down for 5 min
+        labels:
+          severity: critical
+        annotations:
+          description: "yalahwy l app ely esmo {{ .Labels.job }} is down w l value b {{ .Value }}"
+  - name: nodeexporter
+    rules:
+      - record: cpu:seconds
+        expr: node_cpu_seconds_total{job="prometheus-ec2-metrics"}

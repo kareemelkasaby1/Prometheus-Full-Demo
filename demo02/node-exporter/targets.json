@@ -1,0 +1,26 @@
+[
+    {
+        "targets": ["localhost:9100"],
+        "labels": {
+            "job": "node",
+            "team": "database",
+            "env": "prod",
+            "type": "mysql",
+            "__meta_mem__": "1000Mb",
+            "__meta_os__": "ubuntu",
+            "__meta_cpu__": "intel"
+        }
+    },
+    {
+        "targets": ["localhost:9100"],
+        "labels": {
+            "job": "node",
+            "team": "database",
+            "env": "prod",
+            "type": "mysql",
+            "__meta_mem__": "1000Mb",
+            "__meta_os__": "ubuntu",
+            "__meta_cpu__": "amd"
+        }
+    }
+]

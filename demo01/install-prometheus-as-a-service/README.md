@@ -51,7 +51,7 @@ sudo mv promtool /usr/local/bin/
 sudo chown prometheus:prometheus /usr/local/bin/prometheus
 sudo chown prometheus:prometheus /usr/local/bin/promtool
 ```
-> 8. finally create the service file to be able to restart the `Prometheus` service:
+> 8. finally create the service file to be able to restart the [`Prometheus` service](prometheus.service):
 ```
 sudo vi /etc/systemd/system/prometheus.service
 ```

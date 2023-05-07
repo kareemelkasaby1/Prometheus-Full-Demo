@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: api-service-monitor
+  labels:
+    app: prometheus
+    release: prometheus
+spec:
+  jobLabel: job
+  endpoints:
+    - interval: 30s
+      port: web
+      path: /swagger-stats/metrics
+  selector:
+    matchLabels:
+      app: api

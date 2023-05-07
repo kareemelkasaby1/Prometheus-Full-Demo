@@ -1,0 +1,6 @@
+groups:
+  - name: api
+    interval: 15s
+    rules:
+      - record: avg_latency_2m
+        expr: rate(http_request_total_sum{job="api"}[2m]) / rate(http_request_total_count{job="api"}[2m])
