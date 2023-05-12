@@ -150,14 +150,14 @@ sudo chown prometheus:prometheus /etc/prometheus/targets.json
 sudo vi /etc/prometheus/prometheus.yml
 
 - job_name: "file"
-    scheme: https
-    tls_config:
+  scheme: https
+  tls_config:
         ca_file: /etc/prometheus/node_exporter.crt
         insecure_skip_verify: true
-    basic_auth:
+  basic_auth:
         username: prometheus
         password: #Password in plain texet not HASHED
-    file_sd_configs:
+  file_sd_configs:
       - files:
           - /etc/prometheus/targets.json
           - /etc/prometheus/*.json
@@ -173,28 +173,29 @@ In AWS environments we always have a dynamic pool of ec2s specialy if we have an
 
 > 1. Create IAM user with programatic access only and `ec2ReadOnlyAccess` policy.
 
->2. Go to `/etc/prometheus/prometheus.yml` and add the following under scrabers section:
+>2. Go to `/etc/prometheus/prometheus.yml` and add the following under scrabers section 
+>.    add secret and access keys :
 
 ```
+sudo vi /etc/prometheus/prometheus.yml
 - job_name: 'aws-service-discovery'
-    scheme: https
-    tls_config:
+  scheme: https
+  tls_config:
         ca_file: /etc/prometheus/node_exporter.crt
         insecure_skip_verify: true
-    basic_auth:
+  basic_auth:
         username: prometheus
         password: #Password in plain texet not HASHED
-    ec2_sd_configs:
+  ec2_sd_configs:
       - region: eu-central-1
-        access_key: PUT_THE_ACCESS_KEY_HERE
-        secret_key: PUT_THE_SECRET_KEY_HERE
+        access_key: #PUT_THE_ACCESS_KEY_HERE
+        secret_key: #PUT_THE_SECRET_KEY_HERE
         port: 9100
 ```
 
 > 3. restart `Prpmetheus` service:
 
 ```
-sudo vi /etc/prometheus/prometheus.yml
 
 sudo systemctl restart prometheus
 
