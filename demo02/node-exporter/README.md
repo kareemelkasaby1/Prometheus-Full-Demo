@@ -173,7 +173,8 @@ In AWS environments we always have a dynamic pool of ec2s specialy if we have an
 
 > 1. Create IAM user with programatic access only and `ec2ReadOnlyAccess` policy.
 
->2. Go to `/etc/prometheus/prometheus.yml` and add the following under scrabers section:
+>2. Go to `/etc/prometheus/prometheus.yml` and add the following under scrabers section 
+>.    add secret and access keys :
 
 ```
 sudo vi /etc/prometheus/prometheus.yml
@@ -187,8 +188,8 @@ sudo vi /etc/prometheus/prometheus.yml
         password: #Password in plain texet not HASHED
   ec2_sd_configs:
       - region: eu-central-1
-        access_key: PUT_THE_ACCESS_KEY_HERE
-        secret_key: PUT_THE_SECRET_KEY_HERE
+        access_key: #PUT_THE_ACCESS_KEY_HERE
+        secret_key: #PUT_THE_SECRET_KEY_HERE
         port: 9100
 ```
 
