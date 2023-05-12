@@ -150,14 +150,14 @@ sudo chown prometheus:prometheus /etc/prometheus/targets.json
 sudo vi /etc/prometheus/prometheus.yml
 
 - job_name: "file"
-    scheme: https
-    tls_config:
+  scheme: https
+  tls_config:
         ca_file: /etc/prometheus/node_exporter.crt
         insecure_skip_verify: true
-    basic_auth:
+  basic_auth:
         username: prometheus
         password: #Password in plain texet not HASHED
-    file_sd_configs:
+  file_sd_configs:
       - files:
           - /etc/prometheus/targets.json
           - /etc/prometheus/*.json
