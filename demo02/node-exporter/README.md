@@ -150,14 +150,14 @@ sudo chown prometheus:prometheus /etc/prometheus/targets.json
 sudo vi /etc/prometheus/prometheus.yml
 
 - job_name: "file"
-    scheme: https
-    tls_config:
+   scheme: https
+   tls_config:
         ca_file: /etc/prometheus/node_exporter.crt
         insecure_skip_verify: true
-    basic_auth:
+   basic_auth:
         username: prometheus
         password: #Password in plain texet not HASHED
-    file_sd_configs:
+   file_sd_configs:
       - files:
           - /etc/prometheus/targets.json
           - /etc/prometheus/*.json
@@ -177,14 +177,14 @@ In AWS environments we always have a dynamic pool of ec2s specialy if we have an
 
 ```
 - job_name: 'aws-service-discovery'
-    scheme: https
-    tls_config:
+  scheme: https
+  tls_config:
         ca_file: /etc/prometheus/node_exporter.crt
         insecure_skip_verify: true
-    basic_auth:
+  basic_auth:
         username: prometheus
         password: #Password in plain texet not HASHED
-    ec2_sd_configs:
+  ec2_sd_configs:
       - region: eu-central-1
         access_key: PUT_THE_ACCESS_KEY_HERE
         secret_key: PUT_THE_SECRET_KEY_HERE
