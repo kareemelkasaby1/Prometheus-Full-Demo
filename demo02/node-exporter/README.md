@@ -16,13 +16,13 @@ sudo useradd --no-create-home --shell /bin/false node_exporter
 ```
 cd /tmp/
 
-wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-amd64.tar.gz
 ```
 > 3. extraxt files:
 ```
-tar -xvf node_exporter-1.3.1.linux-amd64.tar.gz
+tar -xvf node_exporter-1.7.0.linux-amd64.tar.gz
 
-cd node_exporter-1.3.1.linux-amd64
+cd node_exporter-1.7.0.linux-amd64
 
 ls
 ```
@@ -49,7 +49,7 @@ sudo systemctl status node_exporter
 sudo systemctl enable node_exporter
 ```
 ## OPtional: Enable Encryption and Authintication while Communicating with Node Exporter
-### Enable Encryption:
+### Enable `Encryption`:
 
 
 > 1. generate self signed certificate with its key with the name of node_exporter
@@ -86,7 +86,7 @@ sudo systemctl status node_exporter
 ```
 > 5. go to `Prometheus` machine and do the following:
 ```
-sudo cp node_exporter.crt /etc/prometheus/
+sudo cp /etc/node_exporter/node_exporter.crt /etc/prometheus/
 
 sudo chown prometheus:prometheus /etc/prometheus/node_exporter.crt
 
@@ -150,14 +150,14 @@ sudo chown prometheus:prometheus /etc/prometheus/targets.json
 sudo vi /etc/prometheus/prometheus.yml
 
 - job_name: "file"
-   scheme: https
-   tls_config:
+    scheme: https
+    tls_config:
         ca_file: /etc/prometheus/node_exporter.crt
         insecure_skip_verify: true
-   basic_auth:
+    basic_auth:
         username: prometheus
         password: #Password in plain texet not HASHED
-   file_sd_configs:
+    file_sd_configs:
       - files:
           - /etc/prometheus/targets.json
           - /etc/prometheus/*.json
@@ -177,14 +177,14 @@ In AWS environments we always have a dynamic pool of ec2s specialy if we have an
 
 ```
 - job_name: 'aws-service-discovery'
-  scheme: https
-  tls_config:
+    scheme: https
+    tls_config:
         ca_file: /etc/prometheus/node_exporter.crt
         insecure_skip_verify: true
-  basic_auth:
+    basic_auth:
         username: prometheus
         password: #Password in plain texet not HASHED
-  ec2_sd_configs:
+    ec2_sd_configs:
       - region: eu-central-1
         access_key: PUT_THE_ACCESS_KEY_HERE
         secret_key: PUT_THE_SECRET_KEY_HERE

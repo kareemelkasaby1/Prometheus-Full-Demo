@@ -2,7 +2,7 @@
   - name: low-space-check-rule
     rules:
       - alert: LowDiskSpace
-        expr: 100 * node_filesystem_free_bytes{job="nodes"} / node_filesystem_size_bytes{job="nodes"} < 10
+        expr: 100 * node_filesystem_free_bytes{job="prometheus-ec2"} / node_filesystem_size_bytes{job="prometheus-ec2"} < 10
         labels:
           severity: warning
           environment: prod
@@ -10,11 +10,11 @@
     interval: 15s
     rules:
       - record: node_network_receive_bytes_rate
-        expr: rate(node_network_receive_bytes_total{job="nodes"}[2m])
+        expr: rate(node_network_receive_bytes_total{job="prometheus-ec2"}[2m])
       - record: node_network_receive_bytes_rate_avg
         expr: avg by(instance) (node_network_receive_bytes_rate)
       - record: node_filesystem_free_percent
-        expr: 100 * node_filesystem_free_bytes{job="nodes"} / node_filesystem_size_bytes{job="nodes"}
+        expr: 100 * node_filesystem_free_bytes{job="prometheus-ec2"} / node_filesystem_size_bytes{job="prometheus-ec2"}        
       - alert: HostOutOfMemory
   # for testing cases will make it < 95 instead of < 10
         expr: node_filesystem_free_percent < 95
@@ -26,7 +26,7 @@
   - name: nodejsApp
     rules:
       - record: job:up
-        expr: up{job="nodeJsApp-metrics"}
+        expr: up{job="NodeJs-App"}
       - alert: nodejsAppDown
         expr: job:up == 0
         for: 10s # will fire allert if it is down for 5 min

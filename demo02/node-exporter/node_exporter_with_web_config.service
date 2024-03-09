@@ -1,12 +1,12 @@
-Unit]
+[Unit]
 Description=Node Exporter
 After=network.target
 
 [Service]
-User=nodeusr
-Group=nodeusr
+User=node_exporter
+Group=node_exporter
 Type=simple
-ExecStart=/usr/local/bin/node_exporter --web.config=/etc/node_exporter/config.yml
+ExecStart=/usr/local/bin/node_exporter --web.config.file=/etc/node_exporter/config.yml
 
 [Install]
 WantedBy=multi-user.target

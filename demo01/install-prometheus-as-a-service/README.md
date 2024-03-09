@@ -26,13 +26,13 @@ sudo chown prometheus:prometheus /var/lib/prometheus
 ```
 cd /tmp/
 
-wget https://github.com/prometheus/prometheus/releases/download/v2.35.0/prometheus-2.35.0.linux-amd64.tar.gz
+wget https://github.com/prometheus/prometheus/releases/download/v2.50.1/prometheus-2.50.1.linux-amd64.tar.gz
 ```
 > 5. extraxt files:
 ```
-tar -xvf prometheus-2.35.0.linux-amd64.tar.gz
+tar -xvf prometheus-2.50.1.linux-amd64.tar.gz
 
-cd prometheus-2.35.0.linux-amd64
+cd prometheus-2.50.1.linux-amd64
 
 ls
 ```

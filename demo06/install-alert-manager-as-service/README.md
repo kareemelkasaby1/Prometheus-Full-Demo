@@ -16,13 +16,13 @@ sudo useradd --no-create-home --shell /bin/false alertmanager
 ```
 cd /tmp/
 
-wget https://github.com/prometheus/alertmanager/releases/download/v0.24.0/alertmanager-0.24.0.linux-amd64.tar.gz
+wget https://github.com/prometheus/alertmanager/releases/download/v0.27.0/alertmanager-0.27.0.linux-amd64.tar.gz
 ```
 > 3. extraxt files:
 ```
-tar -xvf alertmanager-0.24.0.linux-amd64.tar.gz
+tar -xvf alertmanager-0.27.0.linux-amd64.tar.gz
 
-cd alertmanager-0.24.0.linux-amd64
+cd alertmanager-0.27.0.linux-amd64
 
 ls
 ```

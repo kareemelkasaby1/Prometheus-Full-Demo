@@ -15,7 +15,7 @@ route:
   group_interval: 15s
 # How long to wait before sending a notification again if it has already
 # been sent successfully for an alert. (Usually ~3h or more).
-  # repeat_interval: 45s
+  repeat_interval: 45s
 
 receivers:
 - name: 'slack'
