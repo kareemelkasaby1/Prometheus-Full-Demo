@@ -16,13 +16,13 @@ sudo useradd --no-create-home --shell /bin/false node_exporter
 ```
 cd /tmp/
 
-wget https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-amd64.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/v1.8.0/node_exporter-1.8.0.linux-amd64.tar.gz
 ```
 > 3. extraxt files:
 ```
-tar -xvf node_exporter-1.7.0.linux-amd64.tar.gz
+tar -xvf node_exporter-1.8.0.linux-amd64.tar.gz
 
-cd node_exporter-1.7.0.linux-amd64
+cd node_exporter-1.8.0.linux-amd64
 
 ls
 ```
