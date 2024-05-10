@@ -4,3 +4,4 @@ day*
 *.pdf
 *.mp4
 kube-prometheus-stack/*
+kube-prometheus-stack
