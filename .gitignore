@@ -3,3 +3,4 @@ day*
 *.csv
 *.pdf
 *.mp4
+kube-prometheus-stack/*

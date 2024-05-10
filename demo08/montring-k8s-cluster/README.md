@@ -105,25 +105,25 @@ kubectl apply -f api-servicemonitor.yaml
 ```
 kubectl apply -f rules.yaml
 ```
-# 6.3 Configure Rules
+# 6.4 Configure targets
 > 6.3.1 Apply [Prometheus Rules](rules.yaml):
 ```
 kubectl get prometheus -o yaml | grep -A 3 -i ruleSelector
 
-kubectl apply -f rules.yaml
+kubectl apply -f api-servicemonitor.yaml
 ```
-# 6.4 Configure Alert Manager Configurations
-> 6.4.1 Search about `alertmanagerConfigSelector` in the values file and update it to have a selector:
+# 6.5 Configure Alert Manager Configurations
+> 6.5.1 Search about `alertmanagerConfigSelector` in the values file and update it to have a selector:
 ```
 helm show values prometheus-community/kube-prometheus-stack > values-update.yaml
 ```
-> 6.4.2 upgrade HELM release using the updated values file:
+> 6.5.2 upgrade HELM release using the updated values file:
 ```
 helm upgrade prometheus prometheus-community/kube-prometheus-stack --values values-update.yaml
 ```
-> 6.4.3 Apply [Alert Manager Configuration CRD](alertmanager-rule.yaml):
+> 6.5.3 Apply [Alert Manager Configuration CRD](alertmanager-rule.yaml):
 ```
 kubectl get alertmanager -o yaml | grep -A 3 -i alertmanagerConfigSelector
 
-kubectl apply -f rules.yaml
+kubectl apply -f alertmanager-rule.yaml
 ```
